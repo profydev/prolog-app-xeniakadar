@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "@features/ui";
 import classNames from "classnames";
 import styles from "./menu-item-link.module.scss";
+import styled from "styled-components";
 
 type MenuItemProps = {
   className?: string;
@@ -28,3 +29,10 @@ export function MenuItemButton({
     </li>
   );
 }
+
+const CollapseMenuItem = styled(MenuItemButton)`
+  transform: ${({ isCollapsed }) =>
+    isCollapsed ? "rotate(180deg)" : "rotate(0deg)"};
+`;
+
+export { CollapseMenuItem };
